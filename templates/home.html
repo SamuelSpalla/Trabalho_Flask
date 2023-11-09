@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/funcionario">Funcionário</a></li>
+                    <li><a href="/setor">Setor</a></li>
+                    <li><a href="/cargo">Cargo</a></li>
+                </ul>
+            </nav>
+            <a href="{{ url_for('logout') }}"><button id="logout-button">Logout</button></a>
+        </header>
+        <section id="principal">
+            <h1>Bem vindo!</h1>
+            <table>
+                <h2>Funcionários</h2>
+                <tr>
+                    <th>ID</th>
+                    <th>Primeiro Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Data de Admissão</th>
+                    <th>Status do Funcionário</th>
+                    <th>Setor</th>
+                    <th>Cargo</th>
+                </tr>
+                {% for employee in employees %}
+                    <tr>
+                        <td>{{ employee.id }}</td>
+                        <td>{{ employee.primeiro_nome }}</td>
+                        <td>{{ employee.sobrenome }}</td>
+                        <td>{{ employee.data_admissao }}</td>
+                        <td>{{ "Ativo" if employee.status_funcionario else "Inativo" }}</td>
+                        <td>{{ employee.setor.nome if employee.setor else "N/A" }}</td>
+                        <td>{{ employee.cargo.nome if employee.cargo else "N/A" }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <table>
+                <h2>Setores</h2>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                </tr>
+                {% for setor in setores %}
+                    <tr>
+                        <td>{{ setor.id }}</td>
+                        <td>{{ setor.nome }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <table>
+                <h2>Cargos</h2>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>ID do Setor</th>
+                </tr>
+                {% for cargo in cargos %}
+                    <tr>
+                        <td>{{ cargo.id }}</td>
+                        <td>{{ cargo.nome }}</td>
+                        <td>{{ cargo.id_setor }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            
+        </section>
+    </div>
+</body>
+</html>

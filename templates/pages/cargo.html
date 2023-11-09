@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/post_cargo" method="post">
+    <fieldset>
+        <legend>Cadastre o Cargo</legend>
+
+        <label for="nome">Nome do Cargo</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="id_setor">ID do Setor</label>
+        <input type="number" id="id_setor" name="id_setor" required>
+        
+        <div class="btn">
+            {% set msg = get_flashed_messages() %}
+            {% if msg %}
+            <p class='flash-message'>{{ msg[0] }}</p>
+            {% endif %}
+            <button type="submit">Confirmar</button>
+        </div>
+
+    </fieldset>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#cadastro{
+   background-color: #ffffff07;
+   border-radius: 20px;
+   padding: 20px;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 1rem 0 3rem 0;
+}
+
+fieldset{
+    border: 1px solid white;
+    border-radius: 20px;
+
+    padding: 20px 10px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    padding: 15px 0 5px 0;
+}
+
+input, select{
+    
+    height: 1.3rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+input#status_funcionario{
+    width: 3%;
+}
+
+.flash-message{
+    color: green;
+    padding-top: 20px;
+}
+
+#flash-message-login{
+    color: red;
+    padding-top: 20px;
+}
+
+.btn{
+    text-align: center;
+}
+
+button{
+    margin: 50px 0 0 0;
+    width: 15rem;
+    padding: 10px;
+
+    background-color: rgb(29, 155, 240);
+    border: none;
+    border-radius: 20px;
+
+    font-weight: 700;
+}
+
+button:hover{
+    background-color: rgba(29, 156, 240, 0.89);
+}
+
+
+.voltar{
+    color:rgb(221, 84, 84);
+    position: relative;
+    top: -95px;
+}

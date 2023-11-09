@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>{{ nome }}</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <section id="cadastro">
+                <h1>SAMUEL'S TECH</h1>
+                <a href="/home"  class="voltar">Voltar</a>
+                {% block content %}
+                {% endblock %}
+            </section>
+        </div>
+    </main>
+</body>
+<script src="/static/js/script.js"></script>
+</html>

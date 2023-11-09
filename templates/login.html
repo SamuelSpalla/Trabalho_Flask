@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="/">
+    <fieldset>
+        <legend>Faça o login</legend>
+
+        <label for="username">Nome de Usuário</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+            
+        <div class="btn">
+            {% set msg = get_flashed_messages() %}
+            {% if msg %}
+            <p class='flash-message' id='flash-message-login'>{{ msg[0] }}</p>
+            {% endif %}
+            <button type="submit">Confirmar</button>
+        </div>
+
+    </fieldset>
+</form>
+
+
+{% endblock %}
